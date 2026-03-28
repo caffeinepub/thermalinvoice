@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/assets/fonts/DMSerifDisplay.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Deep navy/dark blue primary palette */
+    --background: 0.965 0.006 258;
+    --foreground: 0.18 0.04 258;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 258;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 258;
+    --primary: 0.25 0.09 258;
+    --primary-foreground: 0.985 0 0;
+    --secondary: 0.92 0.02 258;
+    --secondary-foreground: 0.25 0.09 258;
+    --muted: 0.93 0.01 258;
+    --muted-foreground: 0.5 0.04 258;
+    --accent: 0.88 0.04 258;
+    --accent-foreground: 0.25 0.09 258;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.02 258;
+    --input: 0.88 0.02 258;
+    --ring: 0.45 0.12 258;
+    --success: 0.55 0.15 145;
+    --success-foreground: 0.985 0 0;
+    --warning: 0.72 0.18 70;
+    --warning-foreground: 0.18 0.04 258;
+
+    /* Sidebar: dark navy */
+    --sidebar: 0.19 0.07 258;
+    --sidebar-foreground: 0.87 0.025 258;
+    --sidebar-primary: 0.58 0.18 258;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.28 0.08 258;
+    --sidebar-accent-foreground: 0.95 0.01 258;
+    --sidebar-border: 0.28 0.06 258;
+    --sidebar-ring: 0.5 0.12 258;
+
+    --chart-1: 0.58 0.18 258;
+    --chart-2: 0.55 0.15 145;
+    --chart-3: 0.65 0.18 70;
+    --chart-4: 0.62 0.2 310;
+    --chart-5: 0.72 0.16 200;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Thermal print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+    font-family: "JetBrains Mono", monospace !important;
+  }
+  @page {
+    size: 80mm auto;
+    margin: 4mm;
+  }
+}
